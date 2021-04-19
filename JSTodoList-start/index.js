@@ -1,5 +1,5 @@
 // this is comment -- Versión 2
-
+    
 //DOMContentLoaded representa a todo el documento html e indica que no se debe ejecutar el js 
 // hasta que se cargue todo el html.
 document.addEventListener('DOMContentLoaded', function () {
