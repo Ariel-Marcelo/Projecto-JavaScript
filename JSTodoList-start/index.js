@@ -1,4 +1,4 @@
-// this is comment
+// this is comment -- Versión 1
 
 
 //DOMContentLoaded representa a todo el documento html e indica que no se debe ejecutar el js 
