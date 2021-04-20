@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const table = document.getElementById('table');
     const alert = document.getElementById('alert'); // es un label html
     const btn = document.getElementById('add');
+    let id = 1;
+
+    function removeToDo(id){
+        document.getElementById(id).remove(); 
+    }
 
     function addTodo() {
         /* el === sirve para comparar tambien el tipo de dato ya que como es tipado debil entonces 
@@ -21,8 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+
         alert.classList.add('d-none'); // para q no sea visible la etiqueta de Error
         const row = table.insertRow(); // insertaremos una fila
+        row.setAttribute('id', id++);
         // Permite crear un objeto HTML con cierto formato que seguramente debe ser reutilizado
         row.innerHTML = `
                 <td>${title.value} </td>
@@ -35,15 +42,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     <button class="btn btn-primary mb-1">
                     <i class="fa fa-pencil"></i>
                     </button>
-                    <button class="btn btn-danger mb-1 ml-1">
-                    <i class="fa fa-trash"></i>
-                    </button>
                 </td>
         `;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.classList.add('btn', 'btn-danger', 'mb-1', 'm1-1');
+        removeBtn.innerHTML = '<i class="fa fa-trash" > </i> ';
+        removeBtn.onclick = function(e){ 
+
+            removeToDo(row.getAttribute('id'));
+        }
+    
+
+        row.children[3].appendChild(removeBtn);
+
     }
 
     btn.onclick = addTodo;
-});
+}); 
 
 
 
