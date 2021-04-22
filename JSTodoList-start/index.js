@@ -1,7 +1,6 @@
-// this is comment -- Versión 2
-    
 //DOMContentLoaded representa a todo el documento html e indica que no se debe ejecutar el js 
 // hasta que se cargue todo el html.
+
 document.addEventListener('DOMContentLoaded', function () {
     const title = document.getElementById('title');// es un input
     const description = document.getElementById('description');// es un input
@@ -10,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('add');
     let id = 1;
 
-    function removeToDo(id){
-        document.getElementById(id).remove(); 
+    function removeToDo(id) {
+        document.getElementById(id).remove();
     }
 
     function addTodo() {
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         alert.classList.add('d-none'); // para q no sea visible la etiqueta de Error
         const row = table.insertRow(); // insertaremos una fila
-        row.setAttribute('id', id++);
+        row.setAttribute('id', id++); // no es el id escrito en html puede llamarse key a id y no pasa nada.
         // Permite crear un objeto HTML con cierto formato que seguramente debe ser reutilizado
         row.innerHTML = `
                 <td>${title.value} </td>
@@ -48,34 +47,34 @@ document.addEventListener('DOMContentLoaded', function () {
         const removeBtn = document.createElement('button');
         removeBtn.classList.add('btn', 'btn-danger', 'mb-1', 'm1-1');
         removeBtn.innerHTML = '<i class="fa fa-trash" > </i> ';
-        removeBtn.onclick = function(e){ 
-
+        removeBtn.onclick = function (e) {
+ 
             removeToDo(row.getAttribute('id'));
         }
-    
+
 
         row.children[3].appendChild(removeBtn);
 
     }
 
     btn.onclick = addTodo;
-}); 
+});
 
 
 
 /*
-    En jascript concatenas cualquier elemento con $ ejemplo: 'cad' ${valor} 
+    En jascript concatenas cualquier elemento con $ ejemplo: 'cad' ${valor}
     En donde valor = 5, Salida cad 5
 
     const aAñadir = document.createElement('aAñadir');  se puede agregar ciertos elementos al hhml con este método
-    aAñadir.innerHTML = 'Texto'; 
+    aAñadir.innerHTML = 'Texto';
     Texto puede contener HTML
     const a = document.getEmentById('id')
     const b = a.document.getElemensByName('tbody')
     // tbody es una parte del objeto seleccionado en htmal y  se le puede añidir texo incluso html
 
     b.appendChild(sAñadir);
-*/ 
+*/
 
 /*
 Esta es una función---
