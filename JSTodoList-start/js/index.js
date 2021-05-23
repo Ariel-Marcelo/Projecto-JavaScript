@@ -7,3 +7,21 @@ document.addEventListener('DOMContentLoaded', function () {
     view.setModel(model);
     
 })
+
+/*
+se puede pasar funciones como parametros
+
+function t (num, c)
+{
+    return c(num); 
+
+}
+
+function z (num){
+    return num * 2;
+}
+
+t(5, z);
+
+*/
+
