@@ -38,7 +38,7 @@ export default class Model { // para importar primero debemos exportar....
         this.view = view;
     }
     getTodos(){
-        return this.todos;
+        return this.todos.map((todo) => ({...todo}));
     }
 
     addTodo(title, description) {

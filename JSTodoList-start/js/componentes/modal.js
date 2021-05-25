@@ -1,5 +1,5 @@
 // El modal en el html es una ventana emergente para editar un campo, y esta clase ayudará a controlarlo
-//import Alert from "./alert.js"
+import Alert from "./alert.js"
 export default class Modal{
     constructor(){
         this.title  = document.getElementById("modal-title")
@@ -7,6 +7,8 @@ export default class Modal{
         this.btn = document.getElementById("modal-btn");
         this.completed = document.getElementById("modal-completed");
         this.todo = null
+        this.alert = new Alert("modal-alert");
+
 
     }
     // aparecen los datos pre-existententes en la ventana emergente para cambiarlos
