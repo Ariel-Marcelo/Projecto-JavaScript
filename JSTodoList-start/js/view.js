@@ -48,8 +48,17 @@ export default class View {
         this.model.toggleCompleted(id)
     }
 
+
+
     editTodo(id, values){
+
+        this.model.editTodo(id, values)
+        const row  = document.getElementById(id)
+        row.children[0].innerHTML = values.title;
+        row.children[1].innerHTML = values.description;
+        row.children[2].children[0].checked = values.completed;
         console.log(id);
+        console.log(values)
     }
     createRow(todo) {
         const row = table.insertRow(); // insertaremos una fila

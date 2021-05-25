@@ -24,6 +24,12 @@ export default class Model { // para importar primero debemos exportar....
 
 
     }
+
+    editTodo(id, values){
+        const index = this.findTodo(id)
+        Object.assign(this.todos[index], values)
+        this.save();
+    }
     save() {
 
         localStorage.setItem("todos", JSON.stringify(this.todos));
